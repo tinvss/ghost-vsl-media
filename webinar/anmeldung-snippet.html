@@ -1,0 +1,213 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0912;--bg2:#120f1c;--card:#1a1626;--line:#2a2438;--text:#f4f2f8;--muted:#a59fb5;--lila:#9b5cff;--lila2:#b98aff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--lila);color:#fff;font-weight:700;border:0;border-radius:12px;padding:16px 26px;font-size:17px;cursor:pointer;text-decoration:none;font-family:inherit;transition:background .15s}
+.btn:hover{background:#8a45ff}
+/* Kopfleiste */
+.top{position:sticky;top:0;z-index:10;background:rgba(11,9,18,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:12px}
+.logo{font-weight:800;letter-spacing:-.01em;white-space:nowrap}
+.live{font-size:13px;color:var(--muted);white-space:nowrap}
+.live b{color:#ff5a6e;font-weight:700}
+.top .btn{padding:10px 16px;font-size:14px;border-radius:10px}
+.top .mid{display:flex;align-items:center;gap:14px;min-width:0}
+/* Hero */
+.hero{padding:56px 0 64px;background:radial-gradient(900px 500px at 20% 0%,rgba(155,92,255,.18),transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:start}
+.badge{display:inline-block;font-size:13px;font-weight:600;color:var(--lila2);background:rgba(155,92,255,.12);border:1px solid rgba(155,92,255,.35);border-radius:999px;padding:6px 14px;margin-bottom:22px}
+h1{font-size:52px;line-height:1.06;letter-spacing:-.025em;font-weight:800;margin-bottom:20px}
+.sub{font-size:18px;color:#d7d2e2;max-width:560px}
+.sub p+p{margin-top:12px}
+.host{display:flex;align-items:center;gap:12px;margin-top:28px}
+.host img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--lila)}
+.host b{display:block;font-size:15px}
+.host span{font-size:13px;color:var(--muted)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;font-size:14px;color:var(--muted)}
+.facts span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--lila);margin-right:8px;vertical-align:middle}
+/* Formular */
+.form{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.form h2{font-size:22px;margin-bottom:4px}
+.form .when{font-size:14px;color:var(--muted);margin-bottom:18px}
+.form label{display:block;font-size:13px;font-weight:600;margin:12px 0 6px;color:#d7d2e2}
+.form input{width:100%;background:#0f0c17;border:1px solid var(--line);border-radius:10px;padding:14px;color:var(--text);font-size:16px;font-family:inherit}
+.form input:focus{outline:none;border-color:var(--lila)}
+.form .btn{width:100%;margin-top:18px}
+.form small{display:block;text-align:center;font-size:12.5px;color:var(--muted);margin-top:12px}
+.mit{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:14px;color:#d7d2e2}
+.mit img{width:34px;height:34px;border-radius:50%;object-fit:cover}
+/* Abschnitte */
+section{padding:72px 0;border-top:1px solid var(--line)}
+h2.t{font-size:34px;letter-spacing:-.02em;line-height:1.15;margin-bottom:26px}
+.thor{display:grid;grid-template-columns:1fr 270px;gap:48px;align-items:start}
+.thor p{font-size:17px;color:#d7d2e2}
+.thor p+p{margin-top:14px}
+.thor .note{font-size:13px;color:var(--muted);margin-top:20px}
+.vid{border-radius:16px;overflow:hidden;background:#000;aspect-ratio:9/16;border:1px solid var(--line);position:relative}
+.vid video{width:100%;height:100%;object-fit:cover;display:block}
+.cards{display:grid;gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;font-size:17px}
+.sort{margin-top:22px;font-size:19px;font-weight:700}
+.list{counter-reset:n;display:grid;gap:12px}
+.list li{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px 18px 64px;position:relative;font-size:17px}
+.list li::before{counter-increment:n;content:counter(n);position:absolute;left:18px;top:16px;width:30px;height:30px;border-radius:8px;background:rgba(155,92,255,.15);color:var(--lila2);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.two .card b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;color:var(--lila2)}
+.two .card.no b{color:var(--muted)}
+.people .card{display:flex;gap:18px;align-items:flex-start}
+.people img{width:92px;height:92px;border-radius:14px;object-fit:cover;flex:none}
+.people h3{font-size:19px;margin-bottom:6px}
+.people p{font-size:15px;color:#d7d2e2}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 22px}
+details+details{margin-top:10px}
+summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--lila2);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:10px;color:#d7d2e2;font-size:16px}
+.end{text-align:center}
+.end p{font-size:22px;font-weight:700;margin-bottom:22px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{margin:0 10px;text-decoration:none}
+.hl{color:var(--lila2)}
+.mit a{text-decoration:none;color:#d7d2e2}
+.play{position:absolute;inset:0;border:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.75));display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#fff;cursor:pointer;font-family:inherit}
+.play .pi{width:68px;height:68px;border-radius:50%;background:var(--lila);display:flex;align-items:center;justify-content:center;font-size:24px;padding-left:4px;box-shadow:0 8px 30px rgba(155,92,255,.5)}
+.play .pl{position:absolute;bottom:16px;left:0;right:0;text-align:center;font-weight:600;font-size:14px}
+.form small a{color:inherit}
+.host img{width:64px;height:64px}
+.host b{font-size:18px}
+.host span{font-size:15px;color:#cfc9da}
+@media (max-width:860px){
+ .hero{padding:32px 0 44px}
+ .hero .wrap{grid-template-columns:1fr;gap:28px}
+ h1{font-size:36px}
+ .sub{font-size:16.5px}
+ .thor{grid-template-columns:1fr;gap:28px}
+ .vid{max-width:300px;margin:0 auto}
+ .two{grid-template-columns:1fr}
+ section{padding:52px 0}
+ h2.t{font-size:27px}
+ .live{display:none}
+ .people img{width:72px;height:72px}
+}
+@media (max-width:860px){ .order-form{order:2} .order-text-b{order:3} }
+</style>
+
+
+<header class="top"><div class="wrap">
+  <div class="mid"><span class="logo">Viral Vision</span><span class="live"><b>●</b> LIVE · So 15.11. · 19 Uhr</span></div>
+  <a class="btn" href="#platz">Platz sichern</a>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <div class="order-text">
+    <span class="badge">Live-Webinar · Sonntag, 15. November · 19 Uhr · kostenlos</span>
+    <h1>Was mit Faceless-Videos gerade wirklich noch geht. <span class="hl">Auch ohne Gesicht.</span></h1>
+    <div class="sub">
+      <p>Ich mach das seit ich 15 bin. Am Sonntag zeig ich live, was davon heute noch funktioniert und was ich selbst nicht mehr machen würde. Mit echten Zahlen, auch den schlechten.</p>
+      <p>Du brauchst keine Erfahrung.</p>
+    </div>
+    <div class="host">
+      <img src="https://static.funnelcockpit.com/upload/tJ23jg65YY6hWwLJn/b25ea047-0a4f-42c7-a933-6d85f9ed7380.jpg" alt="Tinus Klauser">
+      <div><b>Tinus Klauser</b><span>Hatte 2021 bis 2023 Seiten mit über 6 Mio. Followern. Baut seit Oktober wieder eigene.</span></div>
+    </div>
+    <div class="facts"><span>ca. 90 Minuten</span><span>Zoom geht auch im Browser</span><span>am Ende stell ich kurz das Mentoring vor</span></div>
+  </div>
+
+  <div class="order-form" id="platz">
+    <form class="form" id="anmeldung" novalidate>
+      <h2>Platz sichern</h2>
+      <div class="when">Sonntag, 15. November · 19 Uhr · kostenlos</div>
+      <label for="vn">Vorname</label>
+      <input id="vn" name="firstname" type="text" autocomplete="given-name" placeholder="Dein Vorname" required>
+      <label for="em">E-Mail</label>
+      <input id="em" name="email" type="email" autocomplete="email" inputmode="email" placeholder="Deine E-Mail" required>
+      <p id="fehler" style="display:none;color:#ff8a9a;font-size:14px;margin-top:10px">Bitte trag deinen Vornamen und eine gültige E-Mail ein.</p>
+      <button class="btn" type="submit">Platz sichern</button>
+      <small>Du bekommst den Zoom-Link per Mail. Abmelden geht jederzeit. Es gilt unsere <a href="DATENSCHUTZ_URL">Datenschutzerklärung</a>.</small>
+    </form>
+    <div class="mit"><img src="https://static.funnelcockpit.com/upload/tJ23jg65YY6hWwLJn/eac0d2c3-b81a-4df3-bd4f-e1a3080fe695.jpg" alt="Thorsten"><a href="#thorsten">Thorsten hat mit 47 angefangen. Seine Geschichte ↓</a></div>
+  </div>
+</div></div>
+
+<section id="thorsten"><div class="wrap thor">
+  <div>
+    <h2 class="t">Thorsten war 47, als er angefangen hat.</h2>
+    <p>Er hatte TikTok nicht mal auf dem Handy. Eigentlich wollte er seiner Partnerin beweisen, dass das eine Kindergarten-App ist. Davor hatte er eine eigene Werbeagentur und war fast nie zu Hause, auch sonntags nicht.</p>
+    <p>Dann hat er YouTube geschaut, und jedes Video hat was anderes erzählt. Eins meinte, man braucht für jede Seite ein eigenes Handy. Also hat er 14 kaputte iPhones auf Kleinanzeigen gekauft.</p>
+    <p>Im April 2024 ist er bei uns gelandet. Seit über einem Jahr lebt er davon. Das ist nicht typisch.</p>
+    <p>Heute ist er Head Coach im Mentoring und arbeitet für uns. Das sollst du wissen.</p>
+    <p class="note">Das ist Thorstens Geschichte. Die meisten Seiten floppen am Anfang, auch bei uns.</p>
+  </div>
+  <div class="vid" id="vid"><video src="https://tinvss.github.io/ghost-vsl-media/webinar/thorsten-1511.mp4" poster="https://static.funnelcockpit.com/upload/tJ23jg65YY6hWwLJn/a78b2ffa-2f70-4e88-99ca-29e98cbf5e4c.jpg" playsinline preload="none"></video><button class="play" type="button" aria-label="Video abspielen"><span class="pi">▶</span><span class="pl">Thorsten, 49 · 2:12</span></button></div>
+</div></section>
+
+<section><div class="wrap">
+    <div class="cards">
+    <div class="card">Du hast schon zehn Videos über Faceless-Seiten gesehen, und jedes sagt was anderes.</div>
+    <div class="card">Oder du hast angefangen, zwanzig Videos hochgeladen, 200 Views, und dann leise aufgehört.</div>
+  </div>
+  <p class="sort">Am Sonntag sortier ich das. Mit dem, was ich gerade selbst mache.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="t">Was du am Sonntag siehst</h2>
+  <ol class="list">
+    <li>Wo mit Short-Form gerade Geld liegt: Creator-Programm, TikTok Shop, YouTube. Und wo nicht mehr</li>
+    <li>Eine Seite, die ich gerade neu aufbaue, mit den echten Zahlen der ersten Wochen</li>
+    <li>Warum die meisten nach zwanzig Videos aufhören, und was die anderen anders machen</li>
+    <li>Was Leute aus dem Mentoring in den ersten Monaten wirklich erlebt haben</li>
+    <li>Am Ende Fragen, live. Alles, was du wissen willst</li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="t">Für wen das ist</h2>
+  <div class="two">
+    <div class="card"><b>Für dich</b>Wenn du schon öfter darüber nachgedacht hast, mit Videos Geld zu verdienen, aber nie richtig angefangen hast. Oder angefangen und nach ein paar Wochen wieder aufgehört.</div>
+    <div class="card no"><b>Nicht für dich</b>Wenn du nächsten Monat reich sein willst. Das kann dir keiner versprechen, ich auch nicht.</div>
+  </div>
+</div></section>
+
+<section><div class="wrap people">
+  <h2 class="t">Wer dahinter steckt</h2>
+  <div class="two">
+    <div class="card"><img src="https://static.funnelcockpit.com/upload/tJ23jg65YY6hWwLJn/b25ea047-0a4f-42c7-a933-6d85f9ed7380.jpg" alt="Tinus Klauser"><div><h3>Tinus Klauser</h3><p>Hat mit 14 seine erste Seite gebaut und verkauft. Von 2021 bis 2023 Storytelling-Seiten mit über 6 Millionen Followern. Baut seit Oktober wieder eigene Faceless-Seiten und zeigt die Zahlen öffentlich.</p></div></div>
+    <div class="card"><img src="https://static.funnelcockpit.com/upload/tJ23jg65YY6hWwLJn/eac0d2c3-b81a-4df3-bd4f-e1a3080fe695.jpg" alt="Thorsten"><div><h3>Thorsten</h3><p>Hat mit 47 angefangen, ohne Social-Media-Erfahrung. Heute Head Coach im Viral-Vision-Mentoring.</p></div></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2 class="t">Fragen</h2>
+  <details><summary>Kostet das was?</summary><p>Nein. Das Webinar ist kostenlos.</p></details>
+  <details><summary>Muss ich was installieren?</summary><p>Nein. Zoom läuft auch im Browser. Den Link bekommst du per Mail.</p></details>
+  <details><summary>Muss ich Kamera oder Mikro anmachen?</summary><p>Nein. Du kannst einfach zuschauen und Fragen in den Chat schreiben.</p></details>
+  <details><summary>Muss ich mein Gesicht zeigen, um das zu machen?</summary><p>Nein. Thorsten hat ohne Gesicht angefangen.</p></details>
+  <details><summary>Ich hab null Erfahrung. Bringt mir das was?</summary><p>Thorsten hatte die App nicht mal installiert.</p></details>
+  <details><summary>Verkaufst du am Ende was?</summary><p>Ja. Am Ende erzähl ich kurz, wie das Mentoring funktioniert. Wer will, kann danach ein Gespräch buchen. Musst du nicht.</p></details>
+</div></section>
+
+<section class="end"><div class="wrap">
+  <p>Sonntag, 15. November, 19 Uhr. Kostenlos.</p>
+  <a class="btn" href="#platz">Platz sichern</a>
+</div></section>
+
+<footer><a href="IMPRESSUM_URL">Impressum</a>·<a href="DATENSCHUTZ_URL">Datenschutz</a></footer>
+
+<script>
+document.getElementById('anmeldung').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=this, vn=f.firstname.value.trim(), em=f.email.value.trim();
+  var er=document.getElementById('fehler');
+  if(!vn||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){er.style.display='block';return;}
+  er.style.display='none';
+  // FORM_SUBMIT: wird beim Einbau an die AC-Liste "Webinar 15.11." angebunden
+  window.location.href='danke.html';
+});
+document.querySelector('#vid .play').addEventListener('click',function(){var v=document.querySelector('#vid video');v.controls=true;this.remove();v.play();});
+</script>
